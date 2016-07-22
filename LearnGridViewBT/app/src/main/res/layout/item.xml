@@ -27,11 +27,13 @@
             <EditText
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
+                android:inputType="number"
+                android:ems="10"
                 android:id="@+id/txtSoLuong"
-                android:background="#4c3737"
-                android:textColor="#ffffff"
+                android:background="#291515"
                 android:text="10"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textColor="#ffffff" />
 
             <Button
                 android:layout_width="50dp"

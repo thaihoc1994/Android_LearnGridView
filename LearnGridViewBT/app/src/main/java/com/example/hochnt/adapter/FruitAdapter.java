@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.hochnt.learngridviewbt.R;
 import com.example.hochnt.model.Fruit;
@@ -44,7 +45,23 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         txtSoLuong.setText(fr.getSoLuong()+"");
         imgFruit.setImageResource(fr.getImgFruit());
 
+        btnMua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                xuLyMua(fr);
+            }
+        });
+
 
         return row;
+    }
+
+    private void xuLyMua(Fruit fr) {
+//        fr.setSoLuong(Integer.parseInt(txtSo));
+
+        Toast.makeText(this.context, "Bạn chọn mua: "
+                + fr.getSoLuong() + "\n"
+                + fr.getTen() + "\n"
+                + fr.getMa(),Toast.LENGTH_SHORT).show();
     }
 }
