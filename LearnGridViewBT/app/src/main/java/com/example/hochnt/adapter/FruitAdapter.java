@@ -37,7 +37,7 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         View row = layoutInflater.inflate(this.resource,null);
 
         //get control
-        EditText txtSoLuong = (EditText) row.findViewById(R.id.txtSoLuong);
+        final EditText txtSoLuong = (EditText) row.findViewById(R.id.txtSoLuong);
         Button btnMua = (Button) row.findViewById(R.id.btnMua);
         ImageView imgFruit = (ImageView) row.findViewById(R.id.imgFruit);
 
@@ -48,6 +48,7 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         btnMua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                fr.setSoLuong(Integer.parseInt(txtSoLuong.getText().toString()));
                 xuLyMua(fr);
             }
         });
@@ -57,8 +58,6 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
     }
 
     private void xuLyMua(Fruit fr) {
-//        fr.setSoLuong(Integer.parseInt(txtSo));
-
         Toast.makeText(this.context, "Bạn chọn mua: "
                 + fr.getSoLuong() + "\n"
                 + fr.getTen() + "\n"
